@@ -541,3 +541,137 @@ document.addEventListener("DOMContentLoaded", () => {
         yearElement.textContent = new Date().getFullYear();
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. SCROLL REVEAL ANIMATION
+    const animatedElements = document.querySelectorAll(
+        ".resume-card, .certificates-heading, .certificate-card"
+    );
+
+    animatedElements.forEach((element) => {
+        element.style.opacity = "0";
+        element.style.transform = "translateY(35px)";
+        element.style.transition =
+            "opacity 0.7s ease, transform 0.7s ease";
+    });
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        animatedElements.forEach((element, index) => {
+            element.style.transitionDelay = `${index * 100}ms`;
+            observer.observe(element);
+        });
+    } else {
+        animatedElements.forEach((element) => {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+        });
+    }
+
+
+    // 2. RESUME DOWNLOAD FEEDBACK
+    const resumeLink = document.querySelector(
+        '.resume-card a[download]'
+    );
+
+    if (resumeLink) {
+        resumeLink.addEventListener("click", function () {
+            const originalText = this.textContent;
+
+            this.textContent = "Downloading... ✓";
+
+            setTimeout(() => {
+                this.textContent = originalText;
+            }, 1800);
+        });
+    }
+
+
+    // 3. CERTIFICATE LINK FEEDBACK
+    const certificateLinks = document.querySelectorAll(
+        ".certificate-link"
+    );
+
+    certificateLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+            this.style.opacity = "0.65";
+
+            setTimeout(() => {
+                this.style.opacity = "1";
+            }, 400);
+        });
+    });
+    /* =====================================
+   RESUME & CERTIFICATE INTERACTIONS
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const viewButton = document.getElementById("viewCertificate");
+    const modal = document.getElementById("certificateModal");
+    const closeButton = document.getElementById("closeCertificate");
+
+    if (!viewButton || !modal || !closeButton) {
+        return;
+    }
+
+    let previousFocus = null;
+
+    function openCertificate() {
+        previousFocus = document.activeElement;
+
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+
+        closeButton.focus();
+    }
+
+    function closeCertificate() {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+
+        document.body.style.overflow = "";
+
+        if (previousFocus) {
+            previousFocus.focus();
+        }
+    }
+
+    viewButton.addEventListener("click", openCertificate);
+
+    closeButton.addEventListener("click", closeCertificate);
+
+    // Close when clicking outside the popup
+    modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            closeCertificate();
+        }
+    });
+
+    // Close when pressing Escape
+    document.addEventListener("keydown", function (event) {
+        if (
+            event.key === "Escape" &&
+            modal.classList.contains("active")
+        ) {
+            closeCertificate();
+        }
+    });
+}
+)}
+)
+
+

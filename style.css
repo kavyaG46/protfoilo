@@ -2011,3 +2011,461 @@ body.white-mode .photo-placeholder {
         padding: 30px 18px;
     }
 }
+/* =====================================
+   RESUME & CERTIFICATES
+===================================== */
+
+.resume-section {
+    padding: 110px 7%;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-section .section-heading {
+    max-width: 700px;
+    margin-bottom: 55px;
+}
+
+.resume-section .section-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    color: #ff1744;
+}
+
+.resume-section .section-heading h2 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin: 0 0 20px;
+}
+
+.resume-section .section-heading h2 span {
+    color: #888;
+}
+
+.resume-section .section-heading p {
+    color: var(--gray, #999);
+    max-width: 480px;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+
+/* GRID */
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* CARDS */
+
+.resume-card {
+    position: relative;
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid var(--line, rgba(128,128,128,.25));
+    border-radius: 22px;
+    background: var(--card-bg, rgba(128,128,128,.045));
+    overflow: hidden;
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.resume-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: -100px;
+    right: -100px;
+    background: #ff1744;
+    opacity: .06;
+    border-radius: 50%;
+    transition: transform .5s ease;
+    pointer-events: none;
+}
+
+.resume-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff1744;
+    box-shadow: 0 20px 60px rgba(255, 23, 68, .10);
+}
+
+.resume-card:hover::before {
+    transform: scale(2);
+}
+
+.resume-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.resume-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #ff1744;
+    color: white;
+    font-size: 23px;
+}
+
+.resume-number {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gray, #999);
+}
+
+
+/* RESUME DOCUMENT ILLUSTRATION */
+
+.resume-document {
+    position: relative;
+    padding: 28px;
+    min-height: 245px;
+    background: var(--document-bg, #fff);
+    color: #111;
+    border-radius: 12px;
+    border: 1px solid rgba(128,128,128,.2);
+    overflow: hidden;
+    transition: transform .4s ease;
+}
+
+.resume-card:hover .resume-document {
+    transform: perspective(800px) rotateX(2deg) rotateY(-2deg);
+}
+
+.document-line {
+    height: 5px;
+    width: 90%;
+    background: #dedede;
+    margin: 12px 0;
+    border-radius: 10px;
+}
+
+.document-line.short {
+    width: 30%;
+    background: #ff1744;
+    margin-top: 0;
+}
+
+.document-line.medium {
+    width: 65%;
+}
+
+.document-title {
+    font-size: 31px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-top: 15px;
+}
+
+.document-subtitle {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.document-divider {
+    height: 2px;
+    background: #ff1744;
+    margin: 18px 0;
+}
+
+.document-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 20px;
+}
+
+.document-blocks span {
+    padding: 6px 9px;
+    font-size: 8px;
+    font-weight: 700;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+
+/* CERTIFICATE ILLUSTRATION */
+
+.certificate-preview {
+    min-height: 245px;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255,23,68,.12),
+            transparent 65%
+        ),
+        var(--certificate-bg, #151515);
+    border-radius: 12px;
+}
+
+.certificate-inner {
+    width: 100%;
+    min-height: 205px;
+    padding: 22px 12px;
+    text-align: center;
+    border: 1px solid #bca56a;
+    outline: 1px solid rgba(188,165,106,.4);
+    outline-offset: -7px;
+    color: #f5f0df;
+}
+
+.certificate-small {
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.certificate-star {
+    color: #d6b96c;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.certificate-inner h3 {
+    font-size: clamp(23px, 3vw, 32px);
+    font-family: Georgia, serif;
+    font-weight: 400;
+    margin: 5px 0 12px;
+}
+
+.certificate-rule {
+    width: 70px;
+    height: 2px;
+    margin: 0 auto 15px;
+    background: #d6b96c;
+}
+
+.certificate-inner p {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.certificate-caption {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #d6b96c;
+}
+
+
+/* CARD CONTENT */
+
+.resume-card-content {
+    padding-top: 25px;
+}
+
+.card-category {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #ff1744;
+    margin-bottom: 12px;
+}
+
+.resume-card-content h3 {
+    font-size: 27px;
+    margin: 0 0 12px;
+    letter-spacing: -.5px;
+    color: var(--text, inherit);
+}
+
+.resume-card-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--gray, #999);
+    margin-bottom: 24px;
+}
+
+
+/* BUTTONS */
+
+.resume-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 100%;
+    padding: 14px 19px;
+    border: 1px solid #ff1744;
+    border-radius: 9px;
+    background: #ff1744;
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.resume-button:hover {
+    background: transparent;
+    color: var(--text, #111);
+    transform: translateY(-3px);
+}
+
+.resume-button span {
+    font-size: 17px;
+}
+
+.outline-button {
+    background: transparent;
+    color: var(--text, inherit);
+}
+
+
+/* CERTIFICATE POPUP */
+
+.certificate-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, .82);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease;
+}
+
+.certificate-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.certificate-modal-content {
+    position: relative;
+    width: min(700px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 20px;
+    background: #111;
+    color: #fff;
+    transform: translateY(20px) scale(.98);
+    transition: transform .3s ease;
+}
+
+.certificate-modal.active .certificate-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.certificate-modal-content h3 {
+    font-size: 28px;
+    margin: 0 0 22px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #444;
+    border-radius: 50%;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: #ff1744;
+}
+
+.actual-certificate {
+    display: block;
+    width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    margin: 0 auto 22px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+
+/* REVEAL ANIMATION */
+
+@media (prefers-reduced-motion: no-preference) {
+    .resume-card {
+        animation: resumeReveal .7s ease both;
+    }
+
+    .resume-card:nth-child(2) {
+        animation-delay: .15s;
+    }
+
+    @keyframes resumeReveal {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+    .resume-section {
+        padding: 75px 5%;
+    }
+
+    .resume-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .resume-section .section-heading h2 {
+        letter-spacing: -1px;
+    }
+
+    .resume-card {
+        padding: 18px;
+    }
+
+    .resume-document,
+    .certificate-preview {
+        min-height: 220px;
+    }
+
+    .certificate-modal-content {
+        padding: 22px 16px;
+    }
+}
+
