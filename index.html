@@ -576,20 +576,20 @@
 
     </div>
 </section>
-        <!-- RESUME & CERTIFICATES SECTION -->
+<!-- ================= RESUME SECTION ================= -->
 <section class="resume-section" id="resume">
 
     <div class="section-heading">
-        <span class="section-label">MY ACHIEVEMENTS / 05</span>
+        <span class="section-label">MY CAREER / 05</span>
 
         <h2>
             My journey.<br>
-            <span>My credentials.</span>
+            <span>My resume.</span>
         </h2>
 
         <p>
-            A little proof of what I have learned
-            and what I am working towards.
+            My education, technical skills and projects
+            in one professional profile.
         </p>
     </div>
 
@@ -605,7 +605,9 @@
 
             <div class="resume-document">
                 <div class="document-line short"></div>
+
                 <div class="document-title">KAVYA</div>
+
                 <div class="document-subtitle">
                     BCA STUDENT · ASPIRING DEVELOPER
                 </div>
@@ -633,8 +635,8 @@
                 <h3>My Resume</h3>
 
                 <p>
-                    My skills, education, technical knowledge
-                    and projects — all in one place.
+                    My education, technical skills and development
+                    projects presented in one professional profile.
                 </p>
 
                 <a
@@ -648,54 +650,177 @@
             </div>
         </div>
 
+    </div>
+</section>
+
+
+<!-- ================= CERTIFICATES SECTION ================= -->
+<section class="resume-section" id="certificates">
+
+    <div class="section-heading">
+        <span class="section-label">MY ACHIEVEMENTS / 06</span>
+
+        <h2>
+            Skills earned.<br>
+            <span>Knowledge certified.</span>
+        </h2>
+
+        <p>
+            Certificates representing my learning
+            and professional skill development.
+        </p>
+    </div>
+
+    <div class="resume-grid">
 
         <!-- EXCEL CERTIFICATE CARD -->
         <div class="resume-card certificate-card">
 
             <div class="resume-card-top">
                 <span class="resume-icon">✦</span>
-                <span class="resume-number">
-                    02 / CERTIFICATE
-                </span>
+                <span class="resume-number">01 / CERTIFICATE</span>
             </div>
+
             <div class="certificate-preview">
+
                 <div class="certificate-inner">
+
                     <span class="certificate-small">
                         CERTIFICATE OF COMPLETION
                     </span>
+
                     <div class="certificate-star">✦</div>
+
                     <h3>Certificate</h3>
+
                     <div class="certificate-rule"></div>
+
                     <p>MICROSOFT EXCEL</p>
+
                     <span class="certificate-caption">
                         SKILLS & LEARNING
                     </span>
 
                 </div>
             </div>
+
             <div class="resume-card-content">
+
                 <span class="card-category">
-                    SKILLS & ACHIEVEMENTS
+                    DATA & PRODUCTIVITY
                 </span>
+
                 <h3>Excel Certificate</h3>
+
                 <p>
-                    A certificate showcasing my Excel learning
+                    Showcasing my Microsoft Excel learning
                     and skills development.
                 </p>
-                <button
-                    type="button"
-                    class="resume-button outline-button"
-                    id="viewCertificate"
-                >
-                    View Certificate <span>↗</span>
-                </button>
+
+                <div class="certificate-buttons">
+
+                    <button
+                        type="button"
+                        class="resume-button outline-button"
+                        id="viewCertificate"
+                    >
+                        View Certificate ↗
+                    </button>
+
+                    <a
+                        href="assets/excel-certificate.jpg"
+                        download="Kavya-Excel-Certificate.jpg"
+                        class="resume-button"
+                    >
+                        Download ↓
+                    </a>
+
+                </div>
             </div>
         </div>
+
+
+        <!-- GENAI DATA ANALYTICS CERTIFICATE CARD -->
+        <div class="resume-card certificate-card">
+
+            <div class="resume-card-top">
+                <span class="resume-icon">🏆</span>
+                <span class="resume-number">02 / CERTIFICATE</span>
+            </div>
+
+            <div class="certificate-preview genai-preview">
+
+                <div class="certificate-inner">
+
+                    <span class="certificate-small">
+                        JOB SIMULATION
+                    </span>
+
+                    <div class="certificate-star">✦</div>
+
+                    <h3>GenAI</h3>
+
+                    <div class="certificate-rule"></div>
+
+                    <p>DATA ANALYTICS</p>
+
+                    <span class="certificate-caption">
+                        TATA × FORAGE
+                    </span>
+
+                </div>
+            </div>
+
+            <div class="resume-card-content">
+
+                <span class="card-category">
+                    DATA ANALYTICS & AI
+                </span>
+
+                <h3>GenAI Powered Data Analytics</h3>
+
+                <p class="certificate-company">
+                    Tata × Forage
+                </p>
+
+                <p class="certificate-date">
+                    Completed: October 15, 2026
+                </p>
+
+                <p>
+                    Practical tasks involving exploratory data
+                    analysis, risk profiling, AI-based delinquency
+                    prediction, business reporting and collections
+                    strategy.
+                </p>
+
+                <div class="certificate-buttons">
+
+                    <button
+                        type="button"
+                        class="resume-button outline-button"
+                        id="viewGenAICertificate"
+                    >
+                        View Certificate ↗
+                    </button>
+
+                    <a
+                        href="genai-data-analytics-certificate.png"
+                        download="Kavya-genai-data-analytics-certificate.png"
+                        class="resume-button"
+                    >
+                        Download ↓
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
 
-<!-- CERTIFICATE POPUP -->
+<!-- ================= EXCEL CERTIFICATE POPUP ================= -->
 <div
     class="certificate-modal"
     id="certificateModal"
@@ -712,7 +837,7 @@
             type="button"
             class="modal-close"
             id="closeCertificate"
-            aria-label="Close certificate"
+            aria-label="Close Excel certificate"
         >
             &times;
         </button>
@@ -741,8 +866,57 @@
         </a>
 
     </div>
-</div>-
+</div>
 
+
+<!-- ================= GENAI CERTIFICATE POPUP ================= -->
+<div
+    class="certificate-modal"
+    id="genaiCertificateModal"
+    aria-hidden="true"
+>
+    <div
+        class="certificate-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="genaiModalTitle"
+    >
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeGenAI"
+            aria-label="Close GenAI certificate"
+        >
+            &times;
+        </button>
+
+        <span class="card-category">
+            MY ACHIEVEMENT
+        </span>
+
+        <h3 id="genaiModalTitle">
+            GenAI Powered Data Analytics
+        </h3>
+
+        <img
+            src="assets/genai-data-analytics-certificate.png"
+            alt="Tata Forage GenAI Powered Data Analytics certificate"
+            class="actual-certificate"
+        >
+
+        <a
+            href="assets/genai-data-analytics-certificate.png"
+            target="_blank"
+            rel="noopener"
+            class="resume-button"
+        >
+            Open Full Certificate ↗
+        </a>
+
+    </div>
+</div>
+    
         <!-- EDUCATION -->
         <section class="section" id="education">
             <div class="section-heading reveal">
